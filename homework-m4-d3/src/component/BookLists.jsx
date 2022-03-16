@@ -1,20 +1,22 @@
-import { Container, Row, Col, Card, Button, InputGroup } from "react-bootstrap";
-import React, { Component } from "react";
-import book from "../books/book.json";
-import SingleBook from "./SingleBook";
+import { Container, Col , Row } from "react-bootstrap";
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import SingleBook from "./Romance";
 
-class BookLists extends Component {
-  state = {};
-  render() {
-    return (
-      <Container>
+
+
+const BookLists = (props) => (
+    <Container>
         <Row>
-          {book.map((list) => (
-            <SingleBook title={list.title} category={list.category} />
-          ))}
+            {props.books.map(b=>(
+                <Col>
+                 <SingleBook books2={b}/>
+                </Col>
+               
+            ))}
         </Row>
-      </Container>
-    );
-  }
-}
+    </Container>
+)
+
+
 export default BookLists;
