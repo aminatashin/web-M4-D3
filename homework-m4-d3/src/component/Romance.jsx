@@ -5,16 +5,17 @@ import CommentBook from "./Comments";
 
 class SingleBook extends Component {
   state = {
-    selectBook: null,
+    selectBook: false,
     
   };
   render() {
     return (
       <Container className="mt-3">
         <Row>
-          <Col md={6}>
-            <Card >
-              <Card.Img variant="top" src={this.props.books.img} onClick={()=> this.setState({selectBook:this.props.books})} />
+          <Col  md={6}>
+            <Card  onClick={()=> this.setState({selectBook:!this.state.selectBook})}> 
+           
+              <Card.Img variant="top" src={this.props.books.img}  />
               <Card.Body>
                 <Card.Title>{this.props.books.title}</Card.Title>
                
@@ -24,7 +25,7 @@ class SingleBook extends Component {
         </Row>
           
         <Col>
-         <CommentBook select={this.state.selectBook} /> 
+       { this.state.selectBook && <CommentBook select={this.props.books.asin}/> } 
          </Col>
            
       </Container>

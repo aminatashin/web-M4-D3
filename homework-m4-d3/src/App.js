@@ -8,6 +8,7 @@ import './App.css';
 import SingleBook from "./component/Romance";
 import book from "../src/books/book.json"
 import BookList from "./component/BookList";
+import CommentList from "./component/CommentList";
 
 
 
@@ -18,6 +19,7 @@ function App() {
       {/* <MyBadge badgeStyle={"success"} textInside="Strive"/> */}
       <SingleBook books={book[0]}/>
       <BookList data={book}/>
+      <CommentList />
     
     </div>
   );
