@@ -25,7 +25,9 @@ class SingleBook extends Component {
         </Row>
           
         <Col>
-       { this.state.selectBook && <CommentBook select={this.props.books.asin}/> } 
+       { 
+       this.state.selectBook && <CommentBook select={this.props.books.asin}/>
+        } 
          </Col>
            
       </Container>

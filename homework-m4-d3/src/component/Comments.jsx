@@ -3,6 +3,8 @@
 
 
 import { Component } from "react";
+import AddComment from "./AddComment";
+import CommentList from "./CommentList";
 
 
 class CommentBook extends Component{
@@ -20,7 +22,7 @@ componentDidMount = async()=>{
         console.log(res)
         if (res.ok){
             let data = await res.json()
-            console.log(data)
+           
             this.setState({
               com:data,
             })
@@ -39,9 +41,12 @@ render(){
 
 
     return (
+     <>
        
-   <CommentBook commentShow={this.state.com}/>
-     
+   <CommentList commentShow={this.state.com}/>
+   <AddComment/>
+
+   </>
     )
     
 }

@@ -1,9 +1,12 @@
 import { ListGroup } from "react-bootstrap";
+// import SingleComment from "./SingleComment";
 
-const CommentList = (props)=>(
-    <ListGroup>
-  <ListGroup.Item>{props.commnetShow.comment}</ListGroup.Item>
-  
-</ListGroup>
-)
-export default CommentList
+const CommentList = ({ commentShow }) => (
+  <ListGroup>
+   {commentShow.map(comment=>(
+    <ListGroup.Item>{comment.comment}</ListGroup.Item>
+   ))}
+ 
+  </ListGroup>
+);
+export default CommentList;
